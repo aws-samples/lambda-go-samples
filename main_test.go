@@ -1,7 +1,6 @@
 package main
 
 import (
-	"errors"
 	"testing"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -27,7 +26,7 @@ func TestHandler(t *testing.T) {
 			// when no name is provided in the HTTP body
 			request: events.APIGatewayProxyRequest{Body: ""},
 			expect:  "",
-			err:     errors.New("no name was provided in the HTTP body"),
+			err:     ErrNameNotProvided,
 		},
 	}
 
