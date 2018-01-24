@@ -31,7 +31,7 @@ phases:
       - cd "/go/src/${PACKAGE}"
 
       # Fetch all dependencies
-      - go get ./...
+      - go get -t ./...
 
       # Ensure code passes all lint tests
       - golint -set_exit_status
